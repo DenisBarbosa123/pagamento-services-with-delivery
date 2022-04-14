@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ExemploServletDM112" />
+        <module name="DeliveryDM112" />
+        <module name="PedidoDM112" />
+        <module name="UtilityDM112" />
+        <module name="PagamentoDM112" />
+        <module name="ExemploDM112_GAE" />
+        <module name="ExemploDM112_OS" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="DeliveryDM112" options="-parameters" />
+      <module name="ExemploDM112_OS" options="-parameters" />
+      <module name="PagamentoDM112" options="-parameters" />
+      <module name="PedidoDM112" options="-parameters" />
+      <module name="UtilityDM112" options="-parameters" />
+    </option>
+  </component>
+</project>

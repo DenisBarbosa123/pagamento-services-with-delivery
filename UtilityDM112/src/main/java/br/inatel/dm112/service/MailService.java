@@ -12,8 +12,7 @@ public class MailService {
 	public void sendMail(MailRequestData mailData) {
 		if (mailData.getFrom() == null || 
 				mailData.getPassword() == null || 
-				mailData.getTo() == null || 
-				mailData.getContent() == null) {
+				mailData.getTo() == null) {
 			throw new UtilityException("Null values not allowed in MailRequestData.");
 		}
 

@@ -21,7 +21,6 @@ public class OrderClient {
 
 	/**
 	 * getItems
-	 * @param cpf
 	 * @return List of orders
 	 */
 	public List<Order> getAllOrders() 

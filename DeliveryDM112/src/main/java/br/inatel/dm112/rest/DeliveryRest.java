@@ -1,7 +1,9 @@
 package br.inatel.dm112.rest;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
+import br.inatel.dm112.exception.OrderNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +21,7 @@ import br.inatel.dm112.model.Record;
 import br.inatel.dm112.services.DeliveryService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/delivery")
 public class DeliveryRest {
 
 	@Autowired
@@ -34,8 +36,19 @@ public class DeliveryRest {
 	
 	@PostMapping(value = "/recordDelivery")
 	@ResponseStatus(HttpStatus.CREATED)
-	public DeliveryDAO recordDelivery(@RequestBody Record record)
+	public DeliveryDAO recordDelivery(@RequestBody Record record) throws OrderNotFoundException
 	{
 		return deliveryService.recordDelivery(record);
+	}
+
+	@GetMapping(value = "/deliveries")
+	@ResponseStatus(HttpStatus.OK)
+	public List<DeliveryDAO> getAllDeliveries()
+	{
+		return deliveryService
+				.getAllDeliveries()
+				.stream()
+				.map(DeliveryService::translateDeliveryFrom)
+				.collect(Collectors.toList());
 	}
 }

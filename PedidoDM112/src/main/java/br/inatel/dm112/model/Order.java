@@ -5,7 +5,7 @@ import java.util.Date;
 public class Order {
 
 //	@JsonIgnore
-	public static enum STATUS { FILLED, PENDING, CONFIRMED }
+	public static enum STATUS { FILLED, PENDING, CONFIRMED, DELIVERED }
 
 	private int number;
 

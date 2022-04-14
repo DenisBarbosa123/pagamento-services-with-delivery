@@ -1,6 +1,6 @@
 package br.inatel.dm112.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,8 +8,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "Delivery")
@@ -24,9 +22,7 @@ public class Delivery {
 	
 	private String cpf;
 	
-	@Column(name = "dataEntrega", nullable = false)
-	@Temporal(TemporalType.DATE)
-	private Date dataEntrega;
+	private String dataEntrega;
 	
 	public int getDeliveryId() 
 	{
@@ -58,12 +54,12 @@ public class Delivery {
 		this.cpf = cpf;
 	}
 	
-	public Date getDataEntrega() 
+	public String getDataEntrega()
 	{
 		return dataEntrega;
 	}
 	
-	public void setDataEntrega(Date dataEntrega) 
+	public void setDataEntrega(String dataEntrega)
 	{
 		this.dataEntrega = dataEntrega;
 	}
