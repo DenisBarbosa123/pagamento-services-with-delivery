@@ -4,6 +4,9 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
+
+import br.inatel.dm112.model.DeliveryStardardError;
+
 import org.springframework.http.HttpStatus;
 
 @ControllerAdvice

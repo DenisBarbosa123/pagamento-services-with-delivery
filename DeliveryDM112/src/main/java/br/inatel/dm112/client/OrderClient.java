@@ -61,18 +61,19 @@ public class OrderClient {
 	 */
 	public void updateOrder(Order order) 
 	{
-
 		String url = restURL + endpoint + "/" + order.getNumber();
 		System.out.println("URL: " + url);
 		
-		WebClient.create(url)
+		Mono<Void> putStream = WebClient.create(url)
 		        .put()
 		        .contentType(MediaType.APPLICATION_JSON)
 		        .header(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON_VALUE)
 		        .body(Mono.just(order), Order.class)
 		        .accept(MediaType.APPLICATION_JSON)
-		        .retrieve();
-
+		        .retrieve()
+		        .bodyToMono(Void.class);
+		
+		putStream.subscribe();
 		System.out.println("Sucesso no updateOrder para o pedido: " + order.getNumber());
 	}
 	
