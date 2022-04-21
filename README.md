@@ -17,3 +17,5 @@ Descrição alto nível de cada projeto:
 - **PedidoDM112**: Implementa o serviço de pedidos (REST). Usa hibernate para salvar os pedidos no banco sqlite.
 
 - **UtilityDM112**: Implementa os serviços de Email e Boleto.
+
+- **DeliveryDM112**: Implementa os serviços de entrega. Este serviço reusa os serviços de Pedido e Utility para listar os pedidos que precisam ser entregues, comunicar cliente via e-mail que pedido foi entregue e quando pedido for entregue ele faz update no pedido para status "Delivered"
